@@ -1,0 +1,5 @@
+Kemal.config.tap do |config|
+  config.env = "development"
+  config.port = "3456"
+  ...
+end
