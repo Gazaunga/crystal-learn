@@ -1,0 +1,8 @@
+## This is messy and hard to read
+proc = ->(t : {Float64|Int32, Float64|Int32}){ t[0] + t[1] }
+proc.call({1, 3}.as({Float64|Int32, Float64|Int32}))
+
+## Let's use an alias to clean up the code
+alias Point = {Float64|Int32, Float64|Int32}
+proc = ->(t : Point){ t[0] + t[1] }
+proc.call({1, 3}.as(Point))
