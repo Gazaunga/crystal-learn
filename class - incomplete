@@ -31,3 +31,5 @@ p = Person.new(fname: "Jeremy",
               )
 
 puts "Hello, and welcome. We have a new employee joining us today named #{p.fname} #{p.mname} #{p.lname}."
+
+#=> Syntax error in eval:8: unexpected token: ( (expected ',' or ')')
