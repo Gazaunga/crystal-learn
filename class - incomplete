@@ -5,16 +5,18 @@ class Person
   property :hair_color, :eye_color, :skin_color
 
 # Mapped initializer
-  def initialize(params(String | Int64) = {})
-    @fname = params[:fname] || ""
-    @mname = params[:mname] || ""
-    @lname = params[:lname] || ""
-    @dob = params[:dob] || ""
-    @fav_color = params[:fav_color] || ""
-    @pet = params[:pet] || ""
-    @hair_color = params[:hair_color] || ""
-    @eye_color = params[:eye_color] || ""
-    @skin_color = params[:skin_color] || ""
+  def initialize()
+@params : Hash(Symbol, Bool | Nil | String) = {
+    :fname => "Jeremy",
+    :mname => "Mark",
+    :lname => "Ottley",
+    :dob => 1988,
+    :fav_color => "Black",
+    :pet => "Misty",
+    :hair_color => "Black",
+    :eye_color => "Brown",
+    :skin_color => "Brown"
+  } of Symbol => Bool | Nil | String
     end
 
   end
@@ -31,5 +33,3 @@ p = Person.new(fname: "Jeremy",
               )
 
 puts "Hello, and welcome. We have a new employee joining us today named #{p.fname} #{p.mname} #{p.lname}."
-
-#=> Syntax error in eval:8: unexpected token: ( (expected ',' or ')')
