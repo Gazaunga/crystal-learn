@@ -1,0 +1,5 @@
+#!/usr/bin/env crystal
+
+require "file_utils"
+
+FileUtils.mkdir("workspace")
