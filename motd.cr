@@ -9,7 +9,6 @@ yellow = "\033[33m"
 blue   = "\033[34m"
 the_end   = "\033[0m"
 
-#puts "#{green}Welcome back#{the_end}#{blue}"
 puts "#{blue} _____ #{green}Welcome#{the_end}#{blue} ______ _ _"
 puts "|  __ \         | ___ (_) |"
 puts "| |  \/ __ _ ___| |_/ /_| |_"
