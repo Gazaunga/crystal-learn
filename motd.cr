@@ -26,9 +26,13 @@ puts "Disk free      : #{%x(df -h /home | tail -1 | awk '{print $4}')}"
 end
 
 end
-
-##=MAIN=##
+    
+def main
 cli = Motd.new
-
 cli.printheader
 cli.sysinfo
+end
+
+##=MAIN=##
+
+main
