@@ -1,8 +1,5 @@
 #!/usr/bin/env crystal
 
-
-#!/usr/bin/env crystal
-
 class Motd
 @@red    = "\033[31m"
 @@green  = "\033[32m"
