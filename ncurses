@@ -1,18 +1,25 @@
 # this uses the agatan/ncurses.cr shard
 
 NCurses.open do
-  NCurses.cbreak
-  NCurses.noecho
+# Initialize? - Need explanation for these commands
+  NCurses.cbreak # What does this do?
+  NCurses.noecho # What does this do?
+  
+# Make the keyboard(kbd) available
   NCurses.keypad(true)
+  
+# Make color available
   NCurses.start_color
   pair = NCurses::ColorPair.new(1).init(NCurses::Color::WHITE, NCurses::Color::BLACK)
-  NCurses.bkgd(pair)
+  NCurses.bkgd(pair) # how can I extend the background to the length of the terminal (80) or more?
 
-  NCurses.erase
-  NCurses.move(y: 10, x: 20)
+  NCurses.erase  # What does this do?
+  
+# Start location
+  NCurses.move(y: 31, x: 71)
   NCurses.addstr("*scratch*")
-  NCurses.refresh
+  NCurses.refresh # What does this do?
 
-  NCurses.notimeout(true)
-  NCurses.getch
+  NCurses.notimeout(true) # What does this do?
+  NCurses.getch # What does this do? get character?
 end
