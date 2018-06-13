@@ -1,8 +1,9 @@
 # this uses the agatan/ncurses.cr shard
 
 NCurses.open do
-# Initialize? - Need explanation for these commands
-  NCurses.cbreak # What does this do?
+# cbreak() or raw() are used to disable line buffering, making characters available as soon as the user types them
+# raw() makes it so C-z and C-c work as suspend and interrupt. cbreak() makes all keys interrupt
+  NCurses.cbreak 
   NCurses.noecho # What does this do?
   
 # Make the keyboard(kbd) available
