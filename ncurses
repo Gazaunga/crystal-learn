@@ -9,8 +9,6 @@ NCurses.open do
   NCurses.bkgd(pair)
 
   NCurses.erase
-  NCurses.move(x: 0, y: 1)
-  NCurses.move(x: 0, y: 2)
   NCurses.move(y: 10, x: 20)
   NCurses.addstr("*scratch*")
   NCurses.refresh
