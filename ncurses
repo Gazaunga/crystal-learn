@@ -1,5 +1,8 @@
 # this uses the agatan/ncurses.cr shard
 
+# make Crystal able to read Asian-lang
+LibNCurses.setlocale(0, "")
+
 NCurses.open do
 # cbreak() or raw() are used to disable line buffering, making characters available as soon as the user types them
 # raw() makes it so C-z and C-c work as suspend and interrupt. cbreak() makes all keys interrupt
@@ -19,6 +22,7 @@ NCurses.open do
 # Start location
   NCurses.move(y: 31, x: 71)
   NCurses.addstr("*scratch*")
+  #NCurses.addstr("あいう")
   NCurses.refresh # What does this do?
 
   NCurses.notimeout(true) # What does this do?
