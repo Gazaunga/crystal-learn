@@ -1,0 +1,20 @@
+# this uses the agatan/ncurses.cr shard
+
+NCurses.open do
+  NCurses.cbreak
+  NCurses.noecho
+  NCurses.keypad(true)
+  NCurses.start_color
+  pair = NCurses::ColorPair.new(1).init(NCurses::Color::WHITE, NCurses::Color::BLACK)
+  NCurses.bkgd(pair)
+
+  NCurses.erase
+  NCurses.move(x: 0, y: 1)
+  NCurses.move(x: 0, y: 2)
+  NCurses.move(y: 10, x: 20)
+  NCurses.addstr("*scratch*")
+  NCurses.refresh
+
+  NCurses.notimeout(true)
+  NCurses.getch
+end
