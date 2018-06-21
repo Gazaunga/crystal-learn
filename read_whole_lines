@@ -1,0 +1,5 @@
+STDIN.gets_to_end 
+
+# or : find out the difference
+
+STDIN.raw
