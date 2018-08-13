@@ -1,0 +1,20 @@
+# From https://github.com/crystal-lang/crystal/issues/2061
+module I::Terminal
+  lib C
+    struct Winsize
+      ws_row : UInt16    # rows, in characters */
+      ws_col : UInt16    # columns, in characters */
+      ws_xpixel : UInt16 # horizontal size, pixels
+      ws_ypixel : UInt16 # vertical size, pixels
+    end
+
+    fun ioctl(fd : Int32, request : UInt32, winsize : C::Winsize*) : Int32
+  end
+
+  def self.get_terminal_size
+    C.ioctl(0, 21523, out screen_size) # magic number
+    screen_size
+  end
+end
+
+TERMINAL_WIDTH = I::Terminal.get_terminal_size.ws_col
